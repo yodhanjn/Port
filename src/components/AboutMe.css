@@ -1,0 +1,46 @@
+.about-me {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-me::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8rem;
+  font-family: Georgia, serif;
+  background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.about-me p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+  .about-me p {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .about-me::before {
+    font-size: 6rem;
+    top: -15px;
+  }
+}

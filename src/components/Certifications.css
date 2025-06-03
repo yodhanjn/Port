@@ -1,0 +1,117 @@
+.certifications-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.certification-item {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.certification-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+    rgba(108, 92, 231, 0.1),
+    rgba(0, 206, 201, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.certification-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+.certification-item:hover::before {
+  opacity: 1;
+}
+
+.certification-item h3 {
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.certification-item p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+}
+
+.certification-item .organization {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: linear-gradient(45deg,
+    rgba(108, 92, 231, 0.1),
+    rgba(0, 206, 201, 0.1)
+  );
+  border-radius: 20px;
+  color: var(--accent-color);
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(253, 121, 168, 0.2);
+  margin-bottom: 1rem;
+}
+
+.certification-item .duration {
+  color: var(--text-secondary);
+  font-style: italic;
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certification-item .duration::before {
+  content: '🗓';
+  font-style: normal;
+}
+
+.certification-item .description {
+  margin-top: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .certification-item {
+    padding: 1.5rem;
+  }
+
+  .certification-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .certification-item p {
+    font-size: 1rem;
+  }
+
+  .certification-item .description {
+    padding: 0.8rem;
+  }
+}
