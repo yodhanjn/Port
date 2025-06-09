@@ -19,7 +19,7 @@ const ContactMe = () => {
         <p>
           <strong>GitHub:</strong>{' '}
           <a href="https://github.com/yodhanjn" target="_blank" rel="noopener noreferrer">
-            Repository
+            Profile
           </a>
         </p>
       </div>
